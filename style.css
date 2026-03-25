@@ -1,0 +1,199 @@
+/*
+    Theme Name: Micalet Minux
+    Description: Micalet minimal WordPress Theme - Versión Optimizada
+    Version: 1.1
+    Author: Micalet WDS
+    Text Domain: micaletminux
+*/
+
+/* 1. VARIABLES Y BASE */
+:root {
+    --primary: #eb5e40;    /* El naranja original que tenías */
+    --secondary: #010e42;  /* El azul oscuro de tu body */
+    --text: #444444;
+    --bg-light: #f4f4f4;
+    --white: #ffffff;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--secondary);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* 2. LAYOUT (Para tu nuevo index.php) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.site-main {
+    flex: 1; /* Esto hace que el contenido principal sea flexible */
+    min-width: 300px;
+}
+
+.sidebar {
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    .sidebar { width: 100%; }
+}
+
+/* 3. HEADER (Simplificado) */
+.menuprin {
+    background-color: #451b3c; /* Tu color oscuro original */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* 4. BLOG / LISTADO DE ENTRADAS */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+/* Estilo para los items del loop */
+.micalet-item {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.micalet-item:hover {
+    transform: translateY(-5px);
+}
+
+.micalet-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 5. FOOTER */
+.footer {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 60px 0 20px;
+    margin-top: 80px;
+}
+
+.footer p { color: var(--white); font-size: 1.4rem; }
+
+/* 6. BOTONES */
+.btn-primary, .leermas_entrada {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--primary);
+    color: var(--white) !important;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+}
+
+/* Limpieza de floats antiguos */
+.clear::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.site-footer {
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-widgets {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.col-footer {
+    flex: 1;
+    min-width: 200px;
+}
+
+.col-footer h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li a {
+    color: #ccc;
+    text-decoration: none;
+    line-height: 2;
+}
+
+.site-info {
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0.6;
+}
+
+.site-info hr {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer-widgets { flex-direction: column; text-align: center; }
+}
